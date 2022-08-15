@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+sources/audio.m4a
+sources/audio_text.txt
+
 # C extensions
 *.so
 
