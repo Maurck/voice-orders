@@ -6,12 +6,11 @@ chunk = 1024
 sample_format = pyaudio.paInt16   
 chanels = 2
   
-smpl_rt = 44400  
-seconds = 6
+smpl_rt = 44400
 filename = "audio.m4a"
 
 
-def record_voice():
+def record_voice(seconds):
     pa = pyaudio.PyAudio()   
     
     stream = pa.open(format=sample_format, channels=chanels,  

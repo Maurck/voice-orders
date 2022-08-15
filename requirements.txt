@@ -1,3 +1,4 @@
 pyaudio
 bs4
 nltk
+requests
