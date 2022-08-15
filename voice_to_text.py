@@ -43,7 +43,7 @@ def poll(transcript_id):
     return polling_response.json()
 
 
-def get_transcription_result_url(url):
+def get_transcription_result_url(url, seconds):
     transcribe_id = transcribe(url)
     while True:
         data = poll(transcribe_id)
@@ -52,12 +52,12 @@ def get_transcription_result_url(url):
         elif data['status'] == 'error':
             return data, data['error']
             
-        print("waiting for 10 seconds")
-        time.sleep(10)
+        print(f"waiting for {seconds * 2} seconds")
+        time.sleep(seconds * 2)
         
         
-def save_transcript(url, title):
-    data, error = get_transcription_result_url(url)
+def save_transcript(url, title, seconds):
+    data, error = get_transcription_result_url(url, seconds)
     
     if data:
         filename = title + '.txt'
