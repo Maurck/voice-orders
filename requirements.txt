@@ -1,0 +1,3 @@
+pyaudio
+bs4
+nltk
